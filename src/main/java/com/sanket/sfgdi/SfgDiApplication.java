@@ -1,13 +1,21 @@
 package com.sanket.sfgdi;
 
+import com.sanket.sfgdi.controllers.MyController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class SfgDiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SfgDiApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+		MyController controller = (MyController) ctx.getBean("myController");
+
+		String greetings = controller.sayHello();
+
+		System.out.println(greetings);
 	}
 
 }
