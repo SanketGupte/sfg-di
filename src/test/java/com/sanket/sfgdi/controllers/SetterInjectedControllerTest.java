@@ -1,11 +1,8 @@
 package com.sanket.sfgdi.controllers;
 
-import com.sanket.sfgdi.services.GreetingService;
-import com.sanket.sfgdi.services.impl.GreetingServiceImpl;
+import com.sanket.sfgdi.services.impl.ConstructorGreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SetterInjectedControllerTest {
 
@@ -14,7 +11,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetterInjectedController();
-        controller.setGreetingService(new GreetingServiceImpl());
+        controller.setGreetingService(new ConstructorGreetingServiceImpl());
     }
 
     @Test
